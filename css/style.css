@@ -1,0 +1,49 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+}
+
+header.jumbotron {
+  text-align: left;
+  background-image: url(http://res.cloudinary.com/dpdxi9nqy/image/upload/v1503920836/katya-austin-313223_vfiedv.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+header.jumbotron .container {
+  padding: 100px 0px;
+}
+header.jumbotron .container h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  color: #f3f3f3;
+  margin-bottom: 20px;
+}
+header.jumbotron .container .line {
+  border: 1px rgba(255, 255, 255, 0.7) solid;
+  width: 300px;
+}
+header.jumbotron .container h4 {
+  margin-top: 20px;
+  color: #FFD633;
+}
+
+#app {
+  height: 200px;
+  padding: 20px;
+}
+#app .book {
+  border: solid 1px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  width: 170px;
+}
+#app .book img {
+  height: 150px;
+}
+#app .book .name {
+  font-size: 18px;
+}
+#app .book .author, #app .book .price {
+  font-size: 14px;
+}

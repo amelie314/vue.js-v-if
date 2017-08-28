@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>vue.js-v-for</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<header class="jumbotron">
+  <div class="container">
+    <h1 data-0="transform:translateY(-50px)" data-500="transform:translateY(100px)"> 跟著書本去旅行</h1>
+    <div class="line"></div>
+    <h4>跨出書宅圈，尋找對味的旅人</h4>
+  </div>
+</header>
+<div id="app">
+  <h1>使用Vue.js計算呈現資訊/v-if</h1>
+  <h3>實戰「書旅」排行版資料轉換成html</h3>
+  <div class="book" v-for="book in books"><img src="{{book.img}}"/>
+    <div class="infos">
+      <h2 class="name">{{book.name.substring(0,18)}}</h2>
+      <h4 class="author">作者：{{book.author}}</h4>
+      <h4 class="price">價錢：{{book.discount*100}} 折 {{parseInt(book.price*book.discount)}}元</h4>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
