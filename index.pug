@@ -5,13 +5,38 @@ header.jumbotron
     h4 跨出書宅圈，尋找對味的旅人
 #app
   h1 使用Vue.js計算呈現資訊/v-if
-  h3 實戰「書旅」排行版資料轉換成html
-  .book(v-for="book in books")
+  h3 實戰誠品排行版資料轉換成html
+  br
+  label 詳細模式
+    input(type="checkbox" v-model="mode_detail")
+    //利用h5可預覽看看值
+    //h5 {{mode_detail}}
+  label 優惠價
+  span(v-for="(id,book) in books")
+    lavel {{id+1}}
+    input(type="checkbox" v-model="book.is_discount")
+  label 小呈現
+    input(type="radio" v-model="mode_size" value="small")
+  label 大呈現
+    input(type="radio" v-model="mode_size" value="big")
+  br
+  .book(v-for="book in books" class="{{mode_detail?'detail':''}} {{mode_size}}")
     img(src="{{book.img}}")
     .infos
-      h2.name {{book.name.substring(0,18)}}
-      h4.author 作者：{{book.author}}
-      h4.price 價錢：{{book.discount*100}} 折 {{parseInt(book.price*book.discount)}}元
+      h2.name 
+        a(href="book.link_book" target="_blank") {{book.name.substring(0,18)}}
+      h4.author 作者：
+        a(href="book.link_author" target="_blank") {{book.author}}
+      h4.publish(v-if="mode_detail") 出版社: {{book.publish_house}}
+      h4.price(v-if="book.is_discount") 優惠價：
+        span.red {{book.discount*100}} 
+        span 折 
+        span.red {{parseInt(book.price*book.discount)}}
+        span 元
+      h4.price(v-if="!book.is_discount")  價錢：
+        span.red {{book.price}} 
+        span 元
+      h4.publish(v-if="mode_detail") 出版日期: {{book.date}}
     
   
   
